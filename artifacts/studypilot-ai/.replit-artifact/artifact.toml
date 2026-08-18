@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "StudyPilot AI"
+description = "A modern, trustworthy resource hub helping students and beginners discover practical AI tools, beginner-friendly guides, and clear explanations without hype."
+version = "1.0.0"
+id = "artifacts/studypilot-ai"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18268
+
+[services.development]
+run = "pnpm --filter @workspace/studypilot-ai run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/studypilot-ai", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/studypilot-ai/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18268"
+BASE_PATH = "/"
