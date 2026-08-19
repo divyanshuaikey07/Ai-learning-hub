@@ -1,0 +1,111 @@
+Continue developing my existing AI website. First inspect the entire current project and preserve everything that already works. Do not rebuild the project from scratch and do not remove existing functionality.
+
+Now complete the website's core functionality and make it production-ready.
+
+1. HOMEPAGE
+
+- Create a polished, modern AI-focused homepage.
+- Include a clear hero section with a strong headline, short description, and “Explore AI Tools” button.
+- Add a useful AI tools search/recommendation area.
+- Add a Featured AI Tools section.
+- Add a clear “View All AI Tools” button.
+- Keep the design clean, professional, fast, and mobile-friendly.
+
+2. AI TOOLS DIRECTORY
+
+- Create/finish a dedicated AI Tools directory.
+- Organize tools into categories:
+  AI Chatbots, Image Generation, Video, Writing, Coding, Productivity, Education, and other useful categories.
+- Each tool should have:
+  name, category, short description, key features, pricing type when known, and official website.
+- Add working search.
+- Add working category filters.
+- Add sorting if useful.
+- Make all cards responsive.
+
+3. TOOL DETAILS
+
+- Clicking a tool should open a proper details view or modal.
+- Show the tool's description, features, use cases, pricing information when known, and official website button.
+- Add an easy way to return to the directory.
+- External official websites should open safely in a new tab.
+
+4. AI TOOL RECOMMENDER
+
+- Add a simple “Find the Best AI Tool for Me” feature.
+- Let users describe what they want to do, for example:
+  “I need an AI for making YouTube videos.”
+- Based on keywords/categories in the existing tool database, recommend the most relevant tools.
+- Show the reason each recommended tool matches the user's request.
+- Do this without requiring a paid API or backend for now.
+
+5. FAVORITES
+
+- Allow users to favorite AI tools.
+- Store favorites locally in the browser using localStorage.
+- Add a “My Favorites” area.
+- Make sure favorites remain after refreshing the page.
+
+6. UI/UX
+
+- Use a consistent modern design throughout the website.
+- Make it fully responsive for phones, tablets, and desktops.
+- Add subtle hover effects and animations without making the site slow.
+- Add loading, empty, and error states where appropriate.
+- Make buttons and navigation easy to understand.
+- Ensure good readability and accessibility.
+
+7. NAVIGATION
+   Create a clear navigation system with:
+
+- Home
+- AI Tools
+- Categories
+- Favorites
+- About
+
+Add a responsive mobile navigation menu.
+
+8. SEO
+   Add proper:
+
+- Page titles
+- Meta descriptions
+- Open Graph metadata
+- Descriptive headings
+- Favicon
+- Clean URLs where possible
+- robots.txt
+- sitemap.xml
+
+Do not use fake SEO claims or keyword stuffing.
+
+9. PERFORMANCE AND SECURITY
+
+- Optimize images and assets.
+- Keep JavaScript and CSS efficient.
+- Do not expose API keys or secrets in frontend code.
+- Sanitize user input where necessary.
+- Do not add unnecessary dependencies.
+
+10. ABOUT PAGE
+    Create a simple professional About page explaining that the website helps users discover and compare useful AI tools.
+
+11. TEST EVERYTHING
+    After implementing all changes:
+
+- Test every navigation link.
+- Test search.
+- Test category filters.
+- Test tool details.
+- Test the AI recommender.
+- Test favorites and localStorage.
+- Test mobile navigation.
+- Test external links.
+- Check for console errors.
+- Fix all errors you find.
+
+IMPORTANT:
+Do not add random sections just to make the website bigger. Focus on useful functionality and a professional user experience.
+
+Use the existing project's technology and structure wherever possible. Do not break existing working features. When finished, give me a short summary of what you changed and any remaining issues.
