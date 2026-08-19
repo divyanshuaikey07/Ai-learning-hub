@@ -174,6 +174,14 @@ function Home() {
     { number: '02', title: 'Keep your bearings', text: 'Learn a simple way to spot guesses, missing context, and answers that need a second look.', href: '/guide/how-to-check-an-ai-answer', Icon: ShieldCheck },
     { number: '03', title: 'Make it yours', text: 'Turn a generated outline into work that reflects your thinking, your voice, and your sources.', href: '/guide/prompts-that-show-your-work', Icon: Layers3 },
   ];
+  const toolCategories: { number: string; title: string; text: string; href: string; Icon: typeof BrainCircuit }[] = [
+    { number: '01', title: 'Writing & communication', text: 'Draft, revise, and find your clearest way to say what you mean.', href: '/tools', Icon: BookOpen },
+    { number: '02', title: 'Research & sources', text: 'Start with better questions and follow the trail back to the evidence.', href: '/tools', Icon: Search },
+    { number: '03', title: 'Study & tutoring', text: 'Break down a difficult topic, practice, and ask for the hint you need.', href: '/students', Icon: BrainCircuit },
+    { number: '04', title: 'Creative work', text: 'Turn an early idea into a visual, presentation, or useful first draft.', href: '/tools', Icon: Sparkles },
+    { number: '05', title: 'Notes & organization', text: 'Make long material easier to navigate, review, and remember.', href: '/tools', Icon: Layers3 },
+    { number: '06', title: 'Digital judgment', text: 'Learn where to pause, check, and keep your private information safe.', href: '/guide/privacy-before-you-paste', Icon: ShieldCheck },
+  ];
   return (
     <>
       <Meta title="StudyPilot AI — Learn AI with a clear head" description="Practical, honest guides and tools for students and beginners learning to use AI well." />
@@ -183,6 +191,10 @@ function Home() {
             <Eyebrow icon={Compass}>A field guide for modern learning</Eyebrow>
             <h1 className="max-w-[680px] font-serif text-[clamp(3.25rem,7vw,6.5rem)] font-semibold leading-[0.94] tracking-[-0.065em]">Use AI with a <span className="text-primary">clear head.</span></h1>
             <p className="mt-7 max-w-[520px] text-lg leading-8 text-muted-foreground">StudyPilot is a practical resource hub for students and first-time explorers. Learn what to ask, what to check, and when to trust your own judgment.</p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <ButtonLink href="/tools" testId="link-home-explore-tools">Explore AI tools</ButtonLink>
+              <Link href="/students" className="inline-flex items-center justify-center gap-2 rounded-full px-4 py-3 text-sm font-semibold text-primary transition-colors hover:bg-secondary" data-testid="link-home-student-toolkit">Start with the student toolkit <ArrowUpRight size={15} /></Link>
+            </div>
             <form onSubmit={submit} className="mt-9 flex max-w-[510px] items-center gap-2 rounded-2xl border border-border bg-card p-2 shadow-paper" role="search">
               <Search className="ml-3 text-muted-foreground" size={19} />
               <input value={query} onChange={(e) => { setQuery(e.target.value); setSubmitted(false); }} className="min-w-0 flex-1 bg-transparent px-2 py-2 text-sm outline-none placeholder:text-muted-foreground" placeholder="What are you trying to learn?" aria-label="Search StudyPilot" data-testid="input-home-search" />
@@ -204,11 +216,35 @@ function Home() {
       <section className="mx-auto max-w-[1240px] px-5 py-16 lg:px-8 lg:py-24">
         <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end"><div><Eyebrow icon={Zap}>Start here</Eyebrow><h2 className="max-w-[550px] font-serif text-4xl leading-[1.05] tracking-[-0.04em] md:text-5xl">A good first step beats a perfect setup.</h2></div><ButtonLink href="/students" secondary testId="link-home-students">See the student toolkit</ButtonLink></div>
         <div className="mt-10 grid gap-4 md:grid-cols-3">
-          {startCards.map(({ number, title, text, href, Icon }) => (
-            <Link href={href} key={number} className="group rounded-2xl border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:border-primary/30 hover:shadow-paper" data-testid={`card-start-${number}`}>
+          {startCards.map(({ number, title, text, href, Icon }, index) => (
+            <Link href={href} key={number} className={`group card-reveal rounded-2xl border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:border-primary/30 hover:shadow-paper [animation-delay:${index * 80}ms]`} data-testid={`card-start-${number}`}>
               <div className="flex items-start justify-between"><span className="font-mono text-xs text-accent">{number}</span><div className="rounded-xl bg-secondary p-2.5 text-primary"><Icon size={20} strokeWidth={1.5} /></div></div><h3 className="mt-7 font-serif text-2xl leading-tight">{title}</h3><p className="mt-3 text-sm leading-6 text-muted-foreground">{text}</p><span className="mt-6 flex items-center gap-1 text-xs font-bold text-primary">Explore <ArrowUpRight size={14} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" /></span>
             </Link>
           ))}
+        </div>
+      </section>
+      <section className="border-y border-border bg-background">
+        <div className="mx-auto max-w-[1240px] px-5 py-16 lg:px-8 lg:py-24">
+          <div className="flex flex-col justify-between gap-5 md:flex-row md:items-end">
+            <div>
+              <Eyebrow icon={Sparkles}>Find your starting point</Eyebrow>
+              <h2 className="max-w-[650px] font-serif text-4xl leading-[1.05] tracking-[-0.04em] md:text-5xl">AI tools for the work in front of you.</h2>
+            </div>
+            <Link href="/tools" className="flex items-center gap-1 text-sm font-bold text-primary" data-testid="link-home-category-directory">See all tools <ArrowUpRight size={15} /></Link>
+          </div>
+          <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {toolCategories.map(({ number, title, text, href, Icon }, index) => (
+              <Link href={href} key={number} className={`group card-reveal rounded-2xl border border-border bg-card p-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/35 hover:bg-secondary/55 hover:shadow-paper [animation-delay:${index * 70}ms]`} data-testid={`card-home-category-${number}`}>
+                <div className="flex items-start justify-between gap-4">
+                  <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-accent">{number}</span>
+                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-secondary text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground"><Icon size={18} strokeWidth={1.6} /></span>
+                </div>
+                <h3 className="mt-7 font-serif text-2xl leading-tight tracking-[-0.025em]">{title}</h3>
+                <p className="mt-3 text-sm leading-6 text-muted-foreground">{text}</p>
+                <span className="mt-5 flex items-center gap-1 text-xs font-bold text-primary">Browse category <ArrowUpRight size={14} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" /></span>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
       <section className="bg-secondary/45"><div className="mx-auto max-w-[1240px] px-5 py-16 lg:px-8 lg:py-24"><div className="flex items-end justify-between"><div><Eyebrow icon={BookOpen}>The latest guides</Eyebrow><h2 className="font-serif text-4xl tracking-[-0.04em] md:text-5xl">Small reads, real use.</h2></div><Link href="/guides" className="hidden items-center gap-1 text-sm font-bold text-primary sm:flex" data-testid="link-home-all-guides">Browse all guides <ArrowUpRight size={15} /></Link></div><div className="mt-9 grid gap-5 md:grid-cols-3">{guides.slice(0, 3).map((guide, index) => <GuideCard key={guide.slug} guide={guide} featured={index === 0} />)}</div><Link href="/guides" className="mt-7 flex items-center gap-1 text-sm font-bold text-primary sm:hidden" data-testid="link-home-all-guides-mobile">Browse all guides <ArrowUpRight size={15} /></Link></div></section>
