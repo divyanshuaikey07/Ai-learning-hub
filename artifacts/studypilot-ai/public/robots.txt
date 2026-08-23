@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://studypilot-ai-website.pages.dev/sitemap.xml
