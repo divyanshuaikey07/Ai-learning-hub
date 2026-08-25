@@ -18,7 +18,7 @@ pnpm install --frozen-lockfile
 The current Vite configuration expects `PORT` to be set for both development and production builds.
 
 ```bash
-PORT=5173 pnpm --filter @workspace/studypilot-ai run dev
+PORT=5173 BASE_PATH=/ pnpm --filter @workspace/studypilot-ai run dev
 ```
 
 The website is frontend-only and does not require a database or API server to run.
@@ -26,7 +26,7 @@ The website is frontend-only and does not require a database or API server to ru
 ## Build the website for production
 
 ```bash
-PORT=5173 pnpm --filter @workspace/studypilot-ai run build
+PORT=5173 BASE_PATH=/ pnpm --filter @workspace/studypilot-ai run build
 ```
 
 The generated static site is written to `artifacts/studypilot-ai/dist`.
@@ -36,7 +36,7 @@ The generated static site is written to `artifacts/studypilot-ai/dist`.
 The repository is a pnpm workspace containing the website, shared libraries, an API server, and a component preview package. Run the full checks with:
 
 ```bash
-PORT=5173 pnpm run build
+PORT=5173 BASE_PATH=/ pnpm run build
 ```
 
 The workspace build runs typechecking first and then builds all packages that provide a build script.

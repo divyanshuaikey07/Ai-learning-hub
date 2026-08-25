@@ -7,7 +7,7 @@ This file documents variable names only. Do not add real values, credentials, to
 | Variable | Required | Purpose |
 | --- | --- | --- |
 | `PORT` | Yes for the current Vite commands | Port used by the Vite dev server and required while loading the current Vite configuration during builds. Set it to the port supplied by the hosting provider. |
-| `BASE_PATH` | Optional | Artifact base path when the site is hosted below a subpath. Leave unset when hosting at the domain root. |
+| `BASE_PATH` | Yes for the current Vite commands | Vite base path used for generated asset URLs. Use `/` at the domain root, or a slash-delimited path such as `/studypilot-ai/` when hosted below a subpath. |
 | `NODE_ENV` | Optional | Runtime mode used by Vite/Replit development plugins. Use `production` for production hosting when the provider does not set it automatically. |
 | `REPL_ID` | Optional | Replit-only development plugin detection. It is not needed on another hosting provider. |
 
@@ -28,6 +28,6 @@ These variables belong to the shared workspace packages, not to the StudyPilot A
 1. Use Node.js 24 and pnpm.
 2. Run `pnpm install --frozen-lockfile`.
 3. Set `PORT` to the provider-assigned port.
-4. Build with `PORT=5173 pnpm --filter @workspace/studypilot-ai run build` or the equivalent provider environment configuration.
+4. Set `BASE_PATH=/` for a domain-root deployment, then build with `PORT=5173 BASE_PATH=/ pnpm --filter @workspace/studypilot-ai run build` or the equivalent provider environment configuration.
 5. Serve the static output from `artifacts/studypilot-ai/dist`.
 6. Configure the hosting provider to fall back to `index.html` for client-side routes such as `/tools/:slug` and `/guide/:slug`.

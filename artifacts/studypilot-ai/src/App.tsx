@@ -9,6 +9,7 @@ import {
   Search, Send, ShieldCheck, SlidersHorizontal, Sparkles, Target, Users, X, Zap,
 } from 'lucide-react';
 import { Link, Route, Switch, useLocation, useParams, Router as WouterRouter } from 'wouter';
+import { articleLibrary } from './articles';
 
 const queryClient = new QueryClient();
 
