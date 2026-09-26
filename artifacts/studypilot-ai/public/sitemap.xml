@@ -1,36 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
   <url>
-    <loc>https://ai-learning-hub-5zn.pages.dev</loc>
+    <loc>https://ai-learning-hub-5zn.pages.dev/</loc>
   </url>
-
   <url>
     <loc>https://ai-learning-hub-5zn.pages.dev/tools</loc>
   </url>
-
   <url>
-    <loc>https://ai-learning-hub-5zn.pages.dev</loc>
+    <loc>https://ai-learning-hub-5zn.pages.dev/students</loc>
   </url>
-
   <url>
     <loc>https://ai-learning-hub-5zn.pages.dev/videos</loc>
   </url>
-
   <url>
     <loc>https://ai-learning-hub-5zn.pages.dev/guides</loc>
   </url>
-
   <url>
     <loc>https://ai-learning-hub-5zn.pages.dev/about</loc>
   </url>
-
   <url>
-    <loc>https://ai-learning-hub-5zn.pages.dev</loc>
+    <loc>https://ai-learning-hub-5zn.pages.dev/contact</loc>
   </url>
-
   <url>
     <loc>https://ai-learning-hub-5zn.pages.dev/privacy</loc>
   </url>
-
 </urlset>
